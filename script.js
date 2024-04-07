@@ -127,7 +127,7 @@ function select() {
     }
 }
 
-
+//function to run random images
 
 async function scroll() {
     await speedScroll1();
