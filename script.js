@@ -1,54 +1,199 @@
+// when user click it select user value and run two function scrolling images and second selecting random value to match with user value
 let user = "0";
 let click0 = document.querySelectorAll(".box")[0]
 click0.addEventListener("click", () => {
-  user = "stone";
-  check()
-  timer()
+    user = "stone";
+    scroll()
+    select()
+    timesPlayed();
+    let j = document.getElementsByClassName("winner")[0]
+    j.style.visibility = "hidden"
 })
 let click1 = document.querySelectorAll(".box")[1]
 click1.addEventListener("click", () => {
-  user = "paper";
-  check()
-  timer()
+    user = "paper";
+    scroll()
+    select()
+    timesPlayed();
+    let j = document.getElementsByClassName("winner")[0]
+    j.style.visibility = "hidden"
 })
 let click2 = document.querySelectorAll(".box")[2]
 click2.addEventListener("click", () => {
-  user = "scissor"
-  check()
-  timer()
+    user = "scissor"
+    scroll()
+    select()
+    timesPlayed();
+    let j = document.getElementsByClassName("winner")[0]
+    j.style.visibility = "hidden"
 })
+var timesCount = 0;
+function timesPlayed() {
+    timesCount++;
+    console.log(timesCount);
+    let counter = document.getElementsByClassName("")
+}
+var link = "null";
+let computerValue = 0;
+let playerValue = 0;
+function select() {
+    let num = Math.random();
+    let i = "0";
+    let z = "";
+    link = "";
+    if (num < 0.33) {
+        i = "stone"
+        link = "<img src='https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png'>"
+    }
+    else if (num < 0.66 && num > 0.33) {
+        i = "paper";
+        link = "<img src='https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg'>"
+    }
+    else {
+        i = "scissor";
+        link = "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KAZtQUpeqelxjO89TJxMfAFtWsX1SCIwCXNaY3HNhfKSy5WTZKEF4K5nWX7upL5NvKo&usqp=CAU'>"
+    };
 
-function timer() {
-  let t = document.getElementsByClassName("count")[0]
-  t.innerHTML = "2";
-  setTimeout(() => {
-    t.innerHTML = 1;
-  }, 1000)
+    console.log(user);
+    console.log(i);
 
-  setTimeout(() => {
-    t.innerHTML = 0;
-  }, 2000)
-
+    if (user === i) {
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "draw!";
+            j.style.visibility = "visible";
+            
+        }, 1400);
+    }
+    if (user === "stone" && i === "paper") {
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "You Lost!";
+            j.style.visibility = "visible";
+            let print = document.getElementsByClassName("computerOutput")[0];
+            computerValue++;
+            print.innerHTML = computerValue;
+        }, 1400);
+    }
+    if (user === "stone" && i === "scissor") {
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "You Win!";
+            j.style.visibility = "visible";
+            let print = document.getElementsByClassName("playerOutput")[0];
+            playerValue++;
+            print.innerHTML = playerValue;
+        }, 1400);
+    }
+    if (user === "paper" && i === "scissor"){
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "You Lost!";
+            j.style.visibility = "visible";
+            let print = document.getElementsByClassName("computerOutput")[0];
+            computerValue++;
+            print.innerHTML = computerValue;
+        }, 1400);
+    }
+    if (user === "paper" && i === "stone"){
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "You Win!";
+            j.style.visibility = "visible";
+            let print = document.getElementsByClassName("playerOutput")[0];
+            playerValue++;
+            print.innerHTML = playerValue;
+        }, 1400);
+    }
+    if (user === "scissor" && i === "stone"){
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "You Lost!";
+            j.style.visibility = "visible";
+            let print = document.getElementsByClassName("computerOutput")[0];
+            computerValue++;
+            print.innerHTML = computerValue;
+        }, 1400);
+    }
+    if (user === "scissor" && i === "paper"){
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "You Win!";
+            j.style.visibility = "visible";
+            let print = document.getElementsByClassName("playerOutput")[0];
+            playerValue++;
+            print.innerHTML = playerValue;
+        }, 1400);
+    }
 }
 
-function check() {
-  let num = Math.random();
-  let i = "0";
-  if (num < 0.33) {
-    i = "stone"
-  }
-  else if (num < 0.66 && num > 0.33) {
-    i = "paper";
-  }
-  else {
-    i = "scissor";
-  }
-  console.log(i)
-  console.log(user)
-  if (user === i) {
-    let j = document.getElementsByClassName("winner")[0]
-    setTimeout(() => {
-      j.style.visibility = "visible"
-    }, 2050);
-  }
+
+
+async function scroll() {
+    await speedScroll1();
+    await speedScroll2();
+    await speedScroll3();
+    await speedScroll4();
+    await speedScroll5();
+    await speedScroll6();
+}
+function speedScroll1() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let t = document.getElementsByClassName("display")[0]
+            t.innerHTML = `<img class='scrollingImg' src="https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png">`;
+            resolve("sucess");
+        }, 200);
+
+    })
+}
+function speedScroll2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let t = document.getElementsByClassName("display")[0]
+            t.innerHTML = `<img class='scrollingImg' src="https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg">`;
+            resolve("sucess");
+        }, 200);
+
+    })
+}
+function speedScroll3() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let t = document.getElementsByClassName("display")[0]
+            t.innerHTML = `<img class='scrollingImg' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KAZtQUpeqelxjO89TJxMfAFtWsX1SCIwCXNaY3HNhfKSy5WTZKEF4K5nWX7upL5NvKo&usqp=CAU">`;
+            resolve("sucess");
+        }, 200);
+
+    })
+}
+function speedScroll4() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let t = document.getElementsByClassName("display")[0]
+            t.innerHTML = `<img class='scrollingImg' src="https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png">`;
+            resolve("sucess");
+        }, 200);
+
+    })
+}
+function speedScroll5() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let t = document.getElementsByClassName("display")[0]
+            t.innerHTML = `<img class='scrollingImg' src="https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg">`;
+            resolve("sucess");
+        }, 200);
+
+    })
+}
+function speedScroll6(newLink) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let t = document.getElementsByClassName("display")[0]
+            t.innerHTML = link
+            resolve("sucess");
+        }, 200);
+
+    })
 }
