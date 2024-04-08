@@ -57,14 +57,7 @@ function select() {
     console.log(user);
     console.log(i);
 
-    if (user === i) {
-        let j = document.getElementsByClassName("winner")[0];
-        setTimeout(() => {
-            j.innerHTML = "draw!";
-            j.style.visibility = "visible";
-            
-        }, 1400);
-    }
+    
     if (user === "stone" && i === "paper") {
         let j = document.getElementsByClassName("winner")[0];
         setTimeout(() => {
@@ -75,7 +68,7 @@ function select() {
             print.innerHTML = computerValue;
         }, 1400);
     }
-    if (user === "stone" && i === "scissor") {
+    else if (user === "stone" && i === "scissor") {
         let j = document.getElementsByClassName("winner")[0];
         setTimeout(() => {
             j.innerHTML = "You Win!";
@@ -85,7 +78,7 @@ function select() {
             print.innerHTML = playerValue;
         }, 1400);
     }
-    if (user === "paper" && i === "scissor"){
+    else if (user === "paper" && i === "scissor"){
         let j = document.getElementsByClassName("winner")[0];
         setTimeout(() => {
             j.innerHTML = "You Lost!";
@@ -95,7 +88,7 @@ function select() {
             print.innerHTML = computerValue;
         }, 1400);
     }
-    if (user === "paper" && i === "stone"){
+    else if (user === "paper" && i === "stone"){
         let j = document.getElementsByClassName("winner")[0];
         setTimeout(() => {
             j.innerHTML = "You Win!";
@@ -105,7 +98,7 @@ function select() {
             print.innerHTML = playerValue;
         }, 1400);
     }
-    if (user === "scissor" && i === "stone"){
+    else if (user === "scissor" && i === "stone"){
         let j = document.getElementsByClassName("winner")[0];
         setTimeout(() => {
             j.innerHTML = "You Lost!";
@@ -115,7 +108,7 @@ function select() {
             print.innerHTML = computerValue;
         }, 1400);
     }
-    if (user === "scissor" && i === "paper"){
+    else if (user === "scissor" && i === "paper"){
         let j = document.getElementsByClassName("winner")[0];
         setTimeout(() => {
             j.innerHTML = "You Win!";
@@ -123,6 +116,14 @@ function select() {
             let print = document.getElementsByClassName("playerOutput")[0];
             playerValue++;
             print.innerHTML = playerValue;
+        }, 1400);
+    }
+    else{
+        let j = document.getElementsByClassName("winner")[0];
+        setTimeout(() => {
+            j.innerHTML = "draw!";
+            j.style.visibility = "visible";
+            
         }, 1400);
     }
 }
