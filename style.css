@@ -1,7 +1,9 @@
-@media screen and (max-width:455px) {
-    .count {
-        display: flex;
-        flex-direction: column;
+@media (max-width: 768px) {
+    .images {
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 50px;
     }
 
 }
@@ -23,7 +25,7 @@ body {
     gap: 10px;
 }
 
-.selection{
+.selection {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
@@ -56,10 +58,6 @@ img {
 }
 
 .display {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 60px;
-    font-weight: 700;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,14 +115,16 @@ img {
     align-items: center;
     padding: 25px;
 }
-.playerOutput{
+
+.playerOutput {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
     font-weight: 700;
     color: white;
     text-align: center;
 }
-.computerOutput{
+
+.computerOutput {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
     font-weight: 700;

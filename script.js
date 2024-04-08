@@ -5,7 +5,7 @@ click0.addEventListener("click", () => {
     user = "stone";
     scroll()
     select()
-    timesPlayed();
+
     let j = document.getElementsByClassName("winner")[0]
     j.style.visibility = "hidden"
 })
@@ -14,7 +14,7 @@ click1.addEventListener("click", () => {
     user = "paper";
     scroll()
     select()
-    timesPlayed();
+
     let j = document.getElementsByClassName("winner")[0]
     j.style.visibility = "hidden"
 })
@@ -23,16 +23,11 @@ click2.addEventListener("click", () => {
     user = "scissor"
     scroll()
     select()
-    timesPlayed();
+
     let j = document.getElementsByClassName("winner")[0]
     j.style.visibility = "hidden"
 })
-var timesCount = 0;
-function timesPlayed() {
-    timesCount++;
-    console.log(timesCount);
-    let counter = document.getElementsByClassName("")
-}
+
 var link = "null";
 let computerValue = 0;
 let playerValue = 0;
@@ -188,7 +183,7 @@ function speedScroll5() {
 
     })
 }
-function speedScroll6(newLink) {
+function speedScroll6() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let t = document.getElementsByClassName("display")[0]
