@@ -38,15 +38,15 @@ function select() {
     link = "";
     if (num < 0.33) {
         i = "stone"
-        link = "<img src='https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png'>"
+        link = "<img src='./assets/stone.jpg'>"
     }
     else if (num < 0.66 && num > 0.33) {
         i = "paper";
-        link = "<img src='https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg'>"
+        link = "<img src='./assets/paper.jpg'>"
     }
     else {
         i = "scissor";
-        link = "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KAZtQUpeqelxjO89TJxMfAFtWsX1SCIwCXNaY3HNhfKSy5WTZKEF4K5nWX7upL5NvKo&usqp=CAU'>"
+        link = "<img src='./assets/scissor.jpg'>"
     };
 
     console.log(user);
@@ -137,7 +137,7 @@ function speedScroll1() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let t = document.getElementsByClassName("display")[0]
-            t.innerHTML = `<img class='scrollingImg' src="https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png">`;
+            t.innerHTML = `<img src='./assets/stone.jpg'>`;
             resolve("sucess");
         }, 200);
 
@@ -147,7 +147,7 @@ function speedScroll2() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let t = document.getElementsByClassName("display")[0]
-            t.innerHTML = `<img class='scrollingImg' src="https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg">`;
+            t.innerHTML = `<img src='./assets/paper.jpg'>`;
             resolve("sucess");
         }, 200);
 
@@ -157,7 +157,7 @@ function speedScroll3() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let t = document.getElementsByClassName("display")[0]
-            t.innerHTML = `<img class='scrollingImg' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KAZtQUpeqelxjO89TJxMfAFtWsX1SCIwCXNaY3HNhfKSy5WTZKEF4K5nWX7upL5NvKo&usqp=CAU">`;
+            t.innerHTML = `<img src='./assets/scissor.jpg'>`;
             resolve("sucess");
         }, 200);
 
@@ -167,7 +167,7 @@ function speedScroll4() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let t = document.getElementsByClassName("display")[0]
-            t.innerHTML = `<img class='scrollingImg' src="https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png">`;
+            t.innerHTML = `<img src='./assets/stone.jpg'>`;
             resolve("sucess");
         }, 200);
 
@@ -177,7 +177,7 @@ function speedScroll5() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let t = document.getElementsByClassName("display")[0]
-            t.innerHTML = `<img class='scrollingImg' src="https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg">`;
+            t.innerHTML = `<img src='./assets/paper.jpg'>`;
             resolve("sucess");
         }, 200);
 
